@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Feed - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="app">
+        <header class="app-header">
+            <h2 class="logo-text">VideoApp</h2>
+            <h2>Feed</h2>
+        </header>
+
+        <main id="main-content">
+            <div class="video-card">
+                <div class="video-placeholder">
+                    <span>[ Video Player 1 ]</span>
+                </div>
+                <div class="video-overlay">
+                    <div class="video-info">
+                        <h3>@creator_pro</h3>
+                        <p>วันนี้มาแจกสูตรเขียนโค้ดเพลินๆ ครับ #coding</p>
+                    </div>
+                    <div class="video-actions">
+                        <button class="action-btn like-btn" data-liked="false">
+                            <span class="icon">❤️</span> <span class="count">125</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <nav class="bottom-nav">
+            <a href="index.html" class="nav-item active">
+                <span class="nav-icon">🏠</span>
+                <span>หน้าแรก</span>
+            </a>
+            <a href="upload-page.html" class="nav-item">
+                <span class="nav-icon-plus">+</span>
+                <span>อัปโหลด</span>
+            </a>
+            <a href="profile-page.html" class="nav-item">
+                <span class="nav-icon">👤</span>
+                <span>โปรไฟล์</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="api.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

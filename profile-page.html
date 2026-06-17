@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="app" class="fullscreen-app">
+        
+        <div class="profile-scroll-container">
+            
+            <div class="profile-header">
+                <div class="profile-avatar-wrapper">
+                    <span id="display-avatar">👤</span>
+                </div>
+                <h2 id="display-username">@my_username</h2>
+                <p id="display-bio">📌 คลิกปุ่มด้านล่างเพื่อเพิ่มคำแนะนำตัว...</p>
+                
+                <div class="profile-stats">
+                    <div><strong>0</strong> <br>ผู้ติดตาม</div>
+                    <div><strong>0</strong> <br>ถูกใจ</div>
+                    <div><strong>0</strong> <br>วิว</div>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h3>🛠️ ตั้งค่าและจัดการโปรไฟล์</h3>
+                
+                <form id="edit-profile-form" onsubmit="saveProfile(event)">
+                    <div class="form-group">
+                        <label>เปลี่ยนชื่อผู้ใช้ (Username)</label>
+                        <input type="text" id="edit-username" value="my_username">
+                    </div>
+                    <div class="form-group">
+                        <label>คำแนะนำตัว (Bio)</label>
+                        <textarea id="edit-bio" rows="2" placeholder="ใส่คำแนะนำตัวของคุณ..."></textarea>
+                    </div>
+                    <button type="submit" class="save-btn">💾 บันทึกข้อมูลโปรไฟล์</button>
+                </form>
+
+                <hr class="divider">
+
+                <h3>🔒 เปลี่ยนรหัสผ่าน</h3>
+                <form id="change-pwd-form" onsubmit="changePassword(event)">
+                    <div class="form-group">
+                        <input type="password" id="old-pwd" placeholder="รหัสผ่านเดิม" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="new-pwd" placeholder="รหัสผ่านใหม่" required>
+                    </div>
+                    <button type="submit" class="pwd-btn">อัปเดตรหัสผ่านใหม่</button>
+                </form>
+
+                <hr class="divider">
+                <a href="login-page.html" class="logout-btn">Logout ออกจากระบบ</a>
+            </div>
+
+            <div class="profile-video-grid">
+                <div class="grid-item">🎬</div>
+                <div class="grid-item">🎬</div>
+                <div class="grid-item">🎬</div>
+            </div>
+        </div>
+
+        <nav class="bottom-nav">
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span>หน้าแรก</span>
+            </a>
+            <a href="upload-page.html" class="nav-item">
+                <span class="nav-icon-plus">+</span>
+                <span>อัปโหลด</span>
+            </a>
+            <a href="profile-page.html" class="nav-item active">
+                <span class="nav-icon">👤</span>
+                <span>โปรไฟล์</span>
+            </a>
+        </nav>
+    </div>
+
+    <script>
+        // ฟังก์ชันบันทึกข้อมูลโปรไฟล์แบบจำลอง (Frontend Save)
+        function saveProfile(e) {
+            e.preventDefault();
+            const user = document.getElementById('edit-username').value;
+            const bio = document.getElementById('edit-bio').value;
+            
+            document.getElementById('display-username').textContent = '@' + user;
+            document.getElementById('display-bio').textContent = bio ? '📌 ' + bio : '📌 ไม่มีคำแนะนำตัว';
+            alert('🎉 บันทึกข้อมูลส่วนตัวสำเร็จ!');
+        }
+
+        function changePassword(e) {
+            e.preventDefault();
+            alert('🔒 เปลี่ยนรหัสผ่านเรียบร้อยแล้ว!');
+            document.getElementById('change-pwd-form').reset();
+        }
+    </script>
+</body>
+</html>

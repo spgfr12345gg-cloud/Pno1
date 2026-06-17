@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Video</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="app">
+        <div class="upload-container">
+            <h2>อัปโหลดวิดีโอใหม่</h2>
+            <form id="upload-form" action="index.html" onsubmit="alert('อัปโหลดสำเร็จ! (Simulated)')">
+                <div class="file-drop-area">
+                    <span class="upload-icon">📁</span>
+                    <p>เลือกวิดีโอ หรือลากไฟล์มาวาง</p>
+                    <input type="file" id="video-file" accept="video/*" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="caption">คำอธิบายคลิป</label>
+                    <textarea id="caption" rows="3" placeholder="เขียนแคปชั่น..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">เผยแพร่คลิป</button>
+            </form>
+        </div>
+
+        <nav class="bottom-nav">
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span>หน้าแรก</span>
+            </a>
+            <a href="upload-page.html" class="nav-item active">
+                <span class="nav-icon-plus">+</span>
+                <span>อัปโหลด</span>
+            </a>
+            <a href="profile-page.html" class="nav-item">
+                <span class="nav-icon">👤</span>
+                <span>โปรไฟล์</span>
+            </a>
+        </nav>
+    </div>
+
+</body>
+</html>
